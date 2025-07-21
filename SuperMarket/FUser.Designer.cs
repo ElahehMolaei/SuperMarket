@@ -105,7 +105,7 @@ namespace SuperMarket
             this.textBox1.Location = new System.Drawing.Point(56, 45);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(244, 21);
-            this.textBox1.TabIndex = 3;
+            this.textBox1.TabIndex = 0;
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label3

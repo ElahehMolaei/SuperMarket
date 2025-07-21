@@ -32,13 +32,18 @@ namespace SuperMarket
                 SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=SuperMarket;Integrated Security=True;Encrypt=False");
                 conn.Open();
                 //insert into user table
-                SqlCommand com = new SqlCommand("INSERT INTO TUser (username, pass, userType) VALUES (@username,@pass,@userType)");
+                SqlCommand com = new SqlCommand("INSERT INTO TUser (username, pass, userType) VALUES (@username,@pass,@userType)",conn);
                 com.Parameters.AddWithValue("@username",textBox1.Text);
                 com.Parameters.AddWithValue("@pass", textBox2.Text);
                 com.Parameters.AddWithValue("@userType", radioButton1.Checked?0:1);
                 com.ExecuteNonQuery();
                 conn.Close();
 
+                //after adding a new user , the texboxes should be empty for adding another user
+                textBox1.Text = textBox2.Text = "";
+                radioButton1.Checked = true;
+                textBox1.Focus();
+                MessageBox.Show("کاربر جدید با موفقیت اضافه شد", "پیام سیستم", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }
