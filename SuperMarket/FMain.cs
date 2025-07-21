@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1;
 
 namespace SuperMarket
 {
@@ -22,6 +23,12 @@ namespace SuperMarket
             FUser fUser = new FUser();
             fUser.ShowDialog();
 
+        }
+
+        private void افزودنمشتریجدیدToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FMoshtari fMoshtari = new FMoshtari();
+            fMoshtari.ShowDialog();
         }
     }
 }

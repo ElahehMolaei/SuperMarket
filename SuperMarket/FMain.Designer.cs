@@ -34,13 +34,16 @@ namespace SuperMarket
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.اطلاعاتکاربرانToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.افزودنکاربرجدیدToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.اطلاعاتمشتریانToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.افزودنمشتریجدیدToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.اطلاعاتکاربرانToolStripMenuItem});
+            this.اطلاعاتکاربرانToolStripMenuItem,
+            this.اطلاعاتمشتریانToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(686, 24);
@@ -61,6 +64,21 @@ namespace SuperMarket
             this.افزودنکاربرجدیدToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.افزودنکاربرجدیدToolStripMenuItem.Text = "افزودن کاربر جدید";
             this.افزودنکاربرجدیدToolStripMenuItem.Click += new System.EventHandler(this.افزودنکاربرجدیدToolStripMenuItem_Click);
+            // 
+            // اطلاعاتمشتریانToolStripMenuItem
+            // 
+            this.اطلاعاتمشتریانToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.افزودنمشتریجدیدToolStripMenuItem});
+            this.اطلاعاتمشتریانToolStripMenuItem.Name = "اطلاعاتمشتریانToolStripMenuItem";
+            this.اطلاعاتمشتریانToolStripMenuItem.Size = new System.Drawing.Size(105, 20);
+            this.اطلاعاتمشتریانToolStripMenuItem.Text = "اطلاعات مشتریان";
+            // 
+            // افزودنمشتریجدیدToolStripMenuItem
+            // 
+            this.افزودنمشتریجدیدToolStripMenuItem.Name = "افزودنمشتریجدیدToolStripMenuItem";
+            this.افزودنمشتریجدیدToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.افزودنمشتریجدیدToolStripMenuItem.Text = "افزودن مشتری جدید";
+            this.افزودنمشتریجدیدToolStripMenuItem.Click += new System.EventHandler(this.افزودنمشتریجدیدToolStripMenuItem_Click);
             // 
             // FMain
             // 
@@ -89,5 +107,7 @@ namespace SuperMarket
         private MenuStrip menuStrip1;
         private ToolStripMenuItem اطلاعاتکاربرانToolStripMenuItem;
         private ToolStripMenuItem افزودنکاربرجدیدToolStripMenuItem;
+        private ToolStripMenuItem اطلاعاتمشتریانToolStripMenuItem;
+        private ToolStripMenuItem افزودنمشتریجدیدToolStripMenuItem;
     }
 }
