@@ -333,35 +333,35 @@ SELECT username, pass, userType FROM TUser WHERE (username = @username)</Command
   <xs:element name="SuperMarketDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="SuperMarketDataSet" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="SuperMarketDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="TAghlam" msprop:Generator_RowClassName="TAghlamRow" msprop:Generator_RowEvHandlerName="TAghlamRowChangeEventHandler" msprop:Generator_RowDeletedName="TAghlamRowDeleted" msprop:Generator_RowDeletingName="TAghlamRowDeleting" msprop:Generator_RowEvArgName="TAghlamRowChangeEvent" msprop:Generator_TablePropName="TAghlam" msprop:Generator_RowChangedName="TAghlamRowChanged" msprop:Generator_UserTableName="TAghlam" msprop:Generator_RowChangingName="TAghlamRowChanging" msprop:Generator_TableClassName="TAghlamDataTable" msprop:Generator_TableVarName="tableTAghlam">
+        <xs:element name="TAghlam" msprop:Generator_RowEvHandlerName="TAghlamRowChangeEventHandler" msprop:Generator_RowDeletedName="TAghlamRowDeleted" msprop:Generator_RowDeletingName="TAghlamRowDeleting" msprop:Generator_RowEvArgName="TAghlamRowChangeEvent" msprop:Generator_TablePropName="TAghlam" msprop:Generator_RowChangedName="TAghlamRowChanged" msprop:Generator_UserTableName="TAghlam" msprop:Generator_RowChangingName="TAghlamRowChanging" msprop:Generator_RowClassName="TAghlamRow" msprop:Generator_TableClassName="TAghlamDataTable" msprop:Generator_TableVarName="tableTAghlam">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="fkey" msprop:Generator_UserColumnName="fkey" msprop:Generator_ColumnPropNameInTable="fkeyColumn" msprop:Generator_ColumnPropNameInRow="fkey" msprop:Generator_ColumnVarNameInTable="columnfkey" type="xs:int" />
-              <xs:element name="kkey" msprop:Generator_UserColumnName="kkey" msprop:Generator_ColumnPropNameInTable="kkeyColumn" msprop:Generator_ColumnPropNameInRow="kkey" msprop:Generator_ColumnVarNameInTable="columnkkey" type="xs:long" />
-              <xs:element name="tedad" msprop:Generator_UserColumnName="tedad" msprop:Generator_ColumnPropNameInTable="tedadColumn" msprop:Generator_ColumnPropNameInRow="tedad" msprop:Generator_ColumnVarNameInTable="columntedad" type="xs:int" minOccurs="0" />
+              <xs:element name="fkey" msprop:Generator_ColumnPropNameInTable="fkeyColumn" msprop:Generator_ColumnPropNameInRow="fkey" msprop:Generator_UserColumnName="fkey" msprop:Generator_ColumnVarNameInTable="columnfkey" type="xs:int" />
+              <xs:element name="kkey" msprop:Generator_ColumnPropNameInTable="kkeyColumn" msprop:Generator_ColumnPropNameInRow="kkey" msprop:Generator_UserColumnName="kkey" msprop:Generator_ColumnVarNameInTable="columnkkey" type="xs:long" />
+              <xs:element name="tedad" msprop:Generator_ColumnPropNameInTable="tedadColumn" msprop:Generator_ColumnPropNameInRow="tedad" msprop:Generator_UserColumnName="tedad" msprop:Generator_ColumnVarNameInTable="columntedad" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TFactor" msprop:Generator_RowClassName="TFactorRow" msprop:Generator_RowEvHandlerName="TFactorRowChangeEventHandler" msprop:Generator_RowDeletedName="TFactorRowDeleted" msprop:Generator_RowDeletingName="TFactorRowDeleting" msprop:Generator_RowEvArgName="TFactorRowChangeEvent" msprop:Generator_TablePropName="TFactor" msprop:Generator_RowChangedName="TFactorRowChanged" msprop:Generator_UserTableName="TFactor" msprop:Generator_RowChangingName="TFactorRowChanging" msprop:Generator_TableClassName="TFactorDataTable" msprop:Generator_TableVarName="tableTFactor">
+        <xs:element name="TFactor" msprop:Generator_RowEvHandlerName="TFactorRowChangeEventHandler" msprop:Generator_RowDeletedName="TFactorRowDeleted" msprop:Generator_RowDeletingName="TFactorRowDeleting" msprop:Generator_RowEvArgName="TFactorRowChangeEvent" msprop:Generator_TablePropName="TFactor" msprop:Generator_RowChangedName="TFactorRowChanged" msprop:Generator_UserTableName="TFactor" msprop:Generator_RowChangingName="TFactorRowChanging" msprop:Generator_RowClassName="TFactorRow" msprop:Generator_TableClassName="TFactorDataTable" msprop:Generator_TableVarName="tableTFactor">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="fkey" msprop:Generator_UserColumnName="fkey" msprop:Generator_ColumnPropNameInTable="fkeyColumn" msprop:Generator_ColumnPropNameInRow="fkey" msprop:Generator_ColumnVarNameInTable="columnfkey" type="xs:int" />
-              <xs:element name="username" msprop:Generator_UserColumnName="username" msprop:Generator_ColumnPropNameInTable="usernameColumn" msprop:Generator_ColumnPropNameInRow="username" msprop:Generator_ColumnVarNameInTable="columnusername" minOccurs="0">
+              <xs:element name="fkey" msprop:Generator_ColumnPropNameInTable="fkeyColumn" msprop:Generator_ColumnPropNameInRow="fkey" msprop:Generator_UserColumnName="fkey" msprop:Generator_ColumnVarNameInTable="columnfkey" type="xs:int" />
+              <xs:element name="username" msprop:Generator_ColumnPropNameInTable="usernameColumn" msprop:Generator_ColumnPropNameInRow="username" msprop:Generator_UserColumnName="username" msprop:Generator_ColumnVarNameInTable="columnusername" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="mkey" msprop:Generator_UserColumnName="mkey" msprop:Generator_ColumnPropNameInTable="mkeyColumn" msprop:Generator_ColumnPropNameInRow="mkey" msprop:Generator_ColumnVarNameInTable="columnmkey" type="xs:int" minOccurs="0" />
-              <xs:element name="datex" msprop:Generator_UserColumnName="datex" msprop:Generator_ColumnPropNameInTable="datexColumn" msprop:Generator_ColumnPropNameInRow="datex" msprop:Generator_ColumnVarNameInTable="columndatex" minOccurs="0">
+              <xs:element name="mkey" msprop:Generator_ColumnPropNameInTable="mkeyColumn" msprop:Generator_ColumnPropNameInRow="mkey" msprop:Generator_UserColumnName="mkey" msprop:Generator_ColumnVarNameInTable="columnmkey" type="xs:int" minOccurs="0" />
+              <xs:element name="datex" msprop:Generator_ColumnPropNameInTable="datexColumn" msprop:Generator_ColumnPropNameInRow="datex" msprop:Generator_UserColumnName="datex" msprop:Generator_ColumnVarNameInTable="columndatex" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="timex" msprop:Generator_UserColumnName="timex" msprop:Generator_ColumnPropNameInTable="timexColumn" msprop:Generator_ColumnPropNameInRow="timex" msprop:Generator_ColumnVarNameInTable="columntimex" minOccurs="0">
+              <xs:element name="timex" msprop:Generator_ColumnPropNameInTable="timexColumn" msprop:Generator_ColumnPropNameInRow="timex" msprop:Generator_UserColumnName="timex" msprop:Generator_ColumnVarNameInTable="columntimex" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
@@ -371,69 +371,69 @@ SELECT username, pass, userType FROM TUser WHERE (username = @username)</Command
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TKala" msprop:Generator_RowClassName="TKalaRow" msprop:Generator_RowEvHandlerName="TKalaRowChangeEventHandler" msprop:Generator_RowDeletedName="TKalaRowDeleted" msprop:Generator_RowDeletingName="TKalaRowDeleting" msprop:Generator_RowEvArgName="TKalaRowChangeEvent" msprop:Generator_TablePropName="TKala" msprop:Generator_RowChangedName="TKalaRowChanged" msprop:Generator_UserTableName="TKala" msprop:Generator_RowChangingName="TKalaRowChanging" msprop:Generator_TableClassName="TKalaDataTable" msprop:Generator_TableVarName="tableTKala">
+        <xs:element name="TKala" msprop:Generator_RowEvHandlerName="TKalaRowChangeEventHandler" msprop:Generator_RowDeletedName="TKalaRowDeleted" msprop:Generator_RowDeletingName="TKalaRowDeleting" msprop:Generator_RowEvArgName="TKalaRowChangeEvent" msprop:Generator_TablePropName="TKala" msprop:Generator_RowChangedName="TKalaRowChanged" msprop:Generator_UserTableName="TKala" msprop:Generator_RowChangingName="TKalaRowChanging" msprop:Generator_RowClassName="TKalaRow" msprop:Generator_TableClassName="TKalaDataTable" msprop:Generator_TableVarName="tableTKala">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="kkey" msprop:Generator_UserColumnName="kkey" msprop:Generator_ColumnPropNameInTable="kkeyColumn" msprop:Generator_ColumnPropNameInRow="kkey" msprop:Generator_ColumnVarNameInTable="columnkkey" type="xs:long" />
-              <xs:element name="kname" msprop:Generator_UserColumnName="kname" msprop:Generator_ColumnPropNameInTable="knameColumn" msprop:Generator_ColumnPropNameInRow="kname" msprop:Generator_ColumnVarNameInTable="columnkname" minOccurs="0">
+              <xs:element name="kkey" msprop:Generator_ColumnPropNameInTable="kkeyColumn" msprop:Generator_ColumnPropNameInRow="kkey" msprop:Generator_UserColumnName="kkey" msprop:Generator_ColumnVarNameInTable="columnkkey" type="xs:long" />
+              <xs:element name="kname" msprop:Generator_ColumnPropNameInTable="knameColumn" msprop:Generator_ColumnPropNameInRow="kname" msprop:Generator_UserColumnName="kname" msprop:Generator_ColumnVarNameInTable="columnkname" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="price" msprop:Generator_UserColumnName="price" msprop:Generator_ColumnPropNameInTable="priceColumn" msprop:Generator_ColumnPropNameInRow="price" msprop:Generator_ColumnVarNameInTable="columnprice" type="xs:long" minOccurs="0" />
-              <xs:element name="mojodi" msprop:Generator_UserColumnName="mojodi" msprop:Generator_ColumnPropNameInTable="mojodiColumn" msprop:Generator_ColumnPropNameInRow="mojodi" msprop:Generator_ColumnVarNameInTable="columnmojodi" type="xs:int" minOccurs="0" />
+              <xs:element name="price" msprop:Generator_ColumnPropNameInTable="priceColumn" msprop:Generator_ColumnPropNameInRow="price" msprop:Generator_UserColumnName="price" msprop:Generator_ColumnVarNameInTable="columnprice" type="xs:long" minOccurs="0" />
+              <xs:element name="mojodi" msprop:Generator_ColumnPropNameInTable="mojodiColumn" msprop:Generator_ColumnPropNameInRow="mojodi" msprop:Generator_UserColumnName="mojodi" msprop:Generator_ColumnVarNameInTable="columnmojodi" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TMoshtari" msprop:Generator_RowClassName="TMoshtariRow" msprop:Generator_RowEvHandlerName="TMoshtariRowChangeEventHandler" msprop:Generator_RowDeletedName="TMoshtariRowDeleted" msprop:Generator_RowDeletingName="TMoshtariRowDeleting" msprop:Generator_RowEvArgName="TMoshtariRowChangeEvent" msprop:Generator_TablePropName="TMoshtari" msprop:Generator_RowChangedName="TMoshtariRowChanged" msprop:Generator_UserTableName="TMoshtari" msprop:Generator_RowChangingName="TMoshtariRowChanging" msprop:Generator_TableClassName="TMoshtariDataTable" msprop:Generator_TableVarName="tableTMoshtari">
+        <xs:element name="TMoshtari" msprop:Generator_RowEvHandlerName="TMoshtariRowChangeEventHandler" msprop:Generator_RowDeletedName="TMoshtariRowDeleted" msprop:Generator_RowDeletingName="TMoshtariRowDeleting" msprop:Generator_RowEvArgName="TMoshtariRowChangeEvent" msprop:Generator_TablePropName="TMoshtari" msprop:Generator_RowChangedName="TMoshtariRowChanged" msprop:Generator_UserTableName="TMoshtari" msprop:Generator_RowChangingName="TMoshtariRowChanging" msprop:Generator_RowClassName="TMoshtariRow" msprop:Generator_TableClassName="TMoshtariDataTable" msprop:Generator_TableVarName="tableTMoshtari">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="mkey" msprop:Generator_UserColumnName="mkey" msprop:Generator_ColumnPropNameInTable="mkeyColumn" msprop:Generator_ColumnPropNameInRow="mkey" msprop:Generator_ColumnVarNameInTable="columnmkey" type="xs:int" />
-              <xs:element name="name" msprop:Generator_UserColumnName="name" msprop:Generator_ColumnPropNameInTable="nameColumn" msprop:Generator_ColumnPropNameInRow="name" msprop:Generator_ColumnVarNameInTable="columnname" minOccurs="0">
+              <xs:element name="mkey" msprop:Generator_ColumnPropNameInTable="mkeyColumn" msprop:Generator_ColumnPropNameInRow="mkey" msprop:Generator_UserColumnName="mkey" msprop:Generator_ColumnVarNameInTable="columnmkey" type="xs:int" />
+              <xs:element name="name" msprop:Generator_ColumnPropNameInTable="nameColumn" msprop:Generator_ColumnPropNameInRow="name" msprop:Generator_UserColumnName="name" msprop:Generator_ColumnVarNameInTable="columnname" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="family" msprop:Generator_UserColumnName="family" msprop:Generator_ColumnPropNameInTable="familyColumn" msprop:Generator_ColumnPropNameInRow="family" msprop:Generator_ColumnVarNameInTable="columnfamily" minOccurs="0">
+              <xs:element name="family" msprop:Generator_ColumnPropNameInTable="familyColumn" msprop:Generator_ColumnPropNameInRow="family" msprop:Generator_UserColumnName="family" msprop:Generator_ColumnVarNameInTable="columnfamily" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="address" msprop:Generator_UserColumnName="address" msprop:Generator_ColumnPropNameInTable="addressColumn" msprop:Generator_ColumnPropNameInRow="address" msprop:Generator_ColumnVarNameInTable="columnaddress" minOccurs="0">
+              <xs:element name="address" msprop:Generator_ColumnPropNameInTable="addressColumn" msprop:Generator_ColumnPropNameInRow="address" msprop:Generator_UserColumnName="address" msprop:Generator_ColumnVarNameInTable="columnaddress" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="tell" msprop:Generator_UserColumnName="tell" msprop:Generator_ColumnPropNameInTable="tellColumn" msprop:Generator_ColumnPropNameInRow="tell" msprop:Generator_ColumnVarNameInTable="columntell" type="xs:int" minOccurs="0" />
+              <xs:element name="tell" msprop:Generator_ColumnPropNameInTable="tellColumn" msprop:Generator_ColumnPropNameInRow="tell" msprop:Generator_UserColumnName="tell" msprop:Generator_ColumnVarNameInTable="columntell" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TUser" msprop:Generator_RowClassName="TUserRow" msprop:Generator_RowEvHandlerName="TUserRowChangeEventHandler" msprop:Generator_RowDeletedName="TUserRowDeleted" msprop:Generator_RowDeletingName="TUserRowDeleting" msprop:Generator_RowEvArgName="TUserRowChangeEvent" msprop:Generator_TablePropName="TUser" msprop:Generator_RowChangedName="TUserRowChanged" msprop:Generator_UserTableName="TUser" msprop:Generator_RowChangingName="TUserRowChanging" msprop:Generator_TableClassName="TUserDataTable" msprop:Generator_TableVarName="tableTUser">
+        <xs:element name="TUser" msprop:Generator_RowEvHandlerName="TUserRowChangeEventHandler" msprop:Generator_RowDeletedName="TUserRowDeleted" msprop:Generator_RowDeletingName="TUserRowDeleting" msprop:Generator_RowEvArgName="TUserRowChangeEvent" msprop:Generator_TablePropName="TUser" msprop:Generator_RowChangedName="TUserRowChanged" msprop:Generator_UserTableName="TUser" msprop:Generator_RowChangingName="TUserRowChanging" msprop:Generator_RowClassName="TUserRow" msprop:Generator_TableClassName="TUserDataTable" msprop:Generator_TableVarName="tableTUser">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="username" msprop:Generator_UserColumnName="username" msprop:Generator_ColumnPropNameInTable="usernameColumn" msprop:Generator_ColumnPropNameInRow="username" msprop:Generator_ColumnVarNameInTable="columnusername">
+              <xs:element name="username" msprop:Generator_ColumnPropNameInTable="usernameColumn" msprop:Generator_ColumnPropNameInRow="username" msprop:Generator_UserColumnName="username" msprop:Generator_ColumnVarNameInTable="columnusername">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="pass" msprop:Generator_UserColumnName="pass" msprop:Generator_ColumnPropNameInTable="passColumn" msprop:Generator_ColumnPropNameInRow="pass" msprop:Generator_ColumnVarNameInTable="columnpass" minOccurs="0">
+              <xs:element name="pass" msprop:Generator_ColumnPropNameInTable="passColumn" msprop:Generator_ColumnPropNameInRow="pass" msprop:Generator_UserColumnName="pass" msprop:Generator_ColumnVarNameInTable="columnpass" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="userType" msprop:Generator_UserColumnName="userType" msprop:Generator_ColumnPropNameInTable="userTypeColumn" msprop:Generator_ColumnPropNameInRow="userType" msprop:Generator_ColumnVarNameInTable="columnuserType" type="xs:int" minOccurs="0" />
+              <xs:element name="userType" msprop:Generator_ColumnPropNameInTable="userTypeColumn" msprop:Generator_ColumnPropNameInRow="userType" msprop:Generator_UserColumnName="userType" msprop:Generator_ColumnVarNameInTable="columnuserType" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -463,10 +463,10 @@ SELECT username, pass, userType FROM TUser WHERE (username = @username)</Command
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_TAghlam_TFactor" msdata:parent="TFactor" msdata:child="TAghlam" msdata:parentkey="fkey" msdata:childkey="fkey" msprop:Generator_UserParentTable="TFactor" msprop:Generator_UserChildTable="TAghlam" msprop:Generator_RelationVarName="relationFK_TAghlam_TFactor" msprop:Generator_ChildPropName="GetTAghlamRows" msprop:Generator_ParentPropName="TFactorRow" msprop:Generator_UserRelationName="FK_TAghlam_TFactor" />
-      <msdata:Relationship name="FK_TAghlam_TKala" msdata:parent="TKala" msdata:child="TAghlam" msdata:parentkey="kkey" msdata:childkey="kkey" msprop:Generator_UserParentTable="TKala" msprop:Generator_UserChildTable="TAghlam" msprop:Generator_RelationVarName="relationFK_TAghlam_TKala" msprop:Generator_ChildPropName="GetTAghlamRows" msprop:Generator_ParentPropName="TKalaRow" msprop:Generator_UserRelationName="FK_TAghlam_TKala" />
-      <msdata:Relationship name="FK_TFactor_TMoshtari" msdata:parent="TMoshtari" msdata:child="TFactor" msdata:parentkey="mkey" msdata:childkey="mkey" msprop:Generator_UserParentTable="TMoshtari" msprop:Generator_UserChildTable="TFactor" msprop:Generator_RelationVarName="relationFK_TFactor_TMoshtari" msprop:Generator_ChildPropName="GetTFactorRows" msprop:Generator_ParentPropName="TMoshtariRow" msprop:Generator_UserRelationName="FK_TFactor_TMoshtari" />
-      <msdata:Relationship name="FK_TFactor_TUser" msdata:parent="TUser" msdata:child="TFactor" msdata:parentkey="username" msdata:childkey="username" msprop:Generator_UserParentTable="TUser" msprop:Generator_UserChildTable="TFactor" msprop:Generator_RelationVarName="relationFK_TFactor_TUser" msprop:Generator_ChildPropName="GetTFactorRows" msprop:Generator_ParentPropName="TUserRow" msprop:Generator_UserRelationName="FK_TFactor_TUser" />
+      <msdata:Relationship name="FK_TAghlam_TFactor" msdata:parent="TFactor" msdata:child="TAghlam" msdata:parentkey="fkey" msdata:childkey="fkey" msprop:Generator_UserParentTable="TFactor" msprop:Generator_UserChildTable="TAghlam" msprop:Generator_RelationVarName="relationFK_TAghlam_TFactor" msprop:Generator_ChildPropName="GetTAghlamRows" msprop:Generator_UserRelationName="FK_TAghlam_TFactor" msprop:Generator_ParentPropName="TFactorRow" />
+      <msdata:Relationship name="FK_TAghlam_TKala" msdata:parent="TKala" msdata:child="TAghlam" msdata:parentkey="kkey" msdata:childkey="kkey" msprop:Generator_UserParentTable="TKala" msprop:Generator_UserChildTable="TAghlam" msprop:Generator_RelationVarName="relationFK_TAghlam_TKala" msprop:Generator_ChildPropName="GetTAghlamRows" msprop:Generator_UserRelationName="FK_TAghlam_TKala" msprop:Generator_ParentPropName="TKalaRow" />
+      <msdata:Relationship name="FK_TFactor_TMoshtari" msdata:parent="TMoshtari" msdata:child="TFactor" msdata:parentkey="mkey" msdata:childkey="mkey" msprop:Generator_UserParentTable="TMoshtari" msprop:Generator_UserChildTable="TFactor" msprop:Generator_RelationVarName="relationFK_TFactor_TMoshtari" msprop:Generator_ChildPropName="GetTFactorRows" msprop:Generator_UserRelationName="FK_TFactor_TMoshtari" msprop:Generator_ParentPropName="TMoshtariRow" />
+      <msdata:Relationship name="FK_TFactor_TUser" msdata:parent="TUser" msdata:child="TFactor" msdata:parentkey="username" msdata:childkey="username" msprop:Generator_UserParentTable="TUser" msprop:Generator_UserChildTable="TFactor" msprop:Generator_RelationVarName="relationFK_TFactor_TUser" msprop:Generator_ChildPropName="GetTFactorRows" msprop:Generator_UserRelationName="FK_TFactor_TUser" msprop:Generator_ParentPropName="TUserRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>
