@@ -93,9 +93,9 @@ namespace WindowsFormsApp1
 
         private void FMoshtari_Load(object sender, EventArgs e)
         {
-            newCustomerCode();
+            newCustomerCode(); //هرسری که فرم لود شد کد اشتراک برای ثبت مشتی جدید نمایش داده شه 
             //SELECT
-            SqlDataAdapter da = new SqlDataAdapter("SELECT   mkey AS [کد مشتری], name AS [نام], address AS [آدرس], phone AS [تلفن] FROM  TMoshtari", conn);
+            SqlDataAdapter da = new SqlDataAdapter("SELECT   mkey AS [کد مشتری], name AS [نام], address AS [آدرس], phone AS [تلفن] FROM  TMoshtari Order by mkey DESC", conn);
             DataTable dt = new DataTable();
             da.Fill(dt);
             dataGridView1.DataSource = dt;
