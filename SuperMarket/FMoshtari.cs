@@ -21,7 +21,24 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
+        //another personal functions that I wanna write by myself!
+        public void newCustomerCode()
+        {
+            try
+            {
+                //SELECT
+                SqlDataAdapter da = new SqlDataAdapter("SELECT   MAX(mkey)  FROM  TMoshtari", conn);
+                DataTable dt = new DataTable(); //a virtual table
+                da.Fill(dt);
+                textBox1.Text = (Convert.ToInt32(dt.Rows[0].ItemArray[0]) + 1).ToString();//radif 0 soton 0
 
+            }
+            //برای اینه که اگه جدول دیتابیسم خالی بود خطا نده و کد مشتری رو از 1000 در نظر بگیره
+            catch
+            {
+                textBox1.Text = "1000";
+            }
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             if (textBox1.Text == "")
@@ -61,7 +78,7 @@ namespace WindowsFormsApp1
                         insertCmd.ExecuteNonQuery();
 
                         textBox1.Text = textBox2.Text = textBox3.Text = textBox4.Text =  "";
-                        textBox1.Focus();
+                        textBox2.Focus();
                         MessageBox.Show("مشتری جدید با موفقیت اضافه شد", "پیام سیستم", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         FMoshtari_Load(sender, e);
                     }
@@ -76,6 +93,7 @@ namespace WindowsFormsApp1
 
         private void FMoshtari_Load(object sender, EventArgs e)
         {
+            newCustomerCode();
             //SELECT
             SqlDataAdapter da = new SqlDataAdapter("SELECT   mkey AS [کد مشتری], name AS [نام], address AS [آدرس], phone AS [تلفن] FROM  TMoshtari", conn);
             DataTable dt = new DataTable();
