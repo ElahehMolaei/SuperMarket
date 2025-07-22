@@ -25,7 +25,13 @@ namespace WindowsFormsApp1
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "")
+            if (checkCode==false)
+            {
+                textBox1.Focus();
+                MessageBox.Show("چنین کد مشتری در سیستم ثبت نشده است.", "پیام سیستم", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            else if (textBox1.Text == "")
                 textBox1.Focus();
             else if (textBox2.Text == "")
                 textBox2.Focus();
@@ -33,6 +39,7 @@ namespace WindowsFormsApp1
                 textBox3.Focus();
             else if (textBox4.Text == "")
                 textBox4.Focus();
+
             else
             {
                 try
@@ -64,10 +71,10 @@ namespace WindowsFormsApp1
                             //using
                             //استفاده کردی.
 
-                            textBox1.Text = textBox2.Text = textBox3.Text = textBox4.Text = "";
-                            textBox1.Focus();
+                            //textBox1.Text = textBox2.Text = textBox3.Text = textBox4.Text = "";
+                            //textBox1.Focus();
                             MessageBox.Show("مشتری جدید با موفقیت بروزرسانی شد", "پیام سیستم", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            checkCode = false;
+                            //checkCode = false;
                             FMoshtariEdit_Load(sender, e);
 
                         }
@@ -101,6 +108,9 @@ namespace WindowsFormsApp1
             //  {
             //      MessageBox.Show("خطای اتصال: " + ex.Message);
             //  }
+
+            textBox1.Text = textBox2.Text = textBox3.Text = textBox4.Text = "";
+            textBox1.Focus();
             //SELECT
             SqlDataAdapter da = new SqlDataAdapter("SELECT   mkey AS [کد مشتری], name AS [نام], address AS [آدرس], phone AS [تلفن] FROM  TMoshtari Order by mkey DESC", conn);
             DataTable dt = new DataTable();
@@ -150,6 +160,7 @@ namespace WindowsFormsApp1
                     else
                     {
                         textBox2.Text = textBox3.Text = textBox4.Text = "";
+                        checkCode = false;
                     }
 
 
@@ -168,7 +179,51 @@ namespace WindowsFormsApp1
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            if(textBox1.Text=="")
+                textBox1.Focus();
+            else if (checkCode == false)
+            {
+                textBox1.Focus();
+                MessageBox.Show("چنین کد مشتری در سیستم ثبت نشده است.", "پیام سیستم", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+            }
+            else
+            {
+                //DELET FROM TMoshtari
+
+                if (!int.TryParse(textBox1.Text, out int code))
+                {
+                    textBox2.Text = textBox3.Text = textBox4.Text = "";
+                    return;
+                }
+                try
+                {
+                    // استفاده از using برای اتصال و دستور
+                    using (SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=SuperMarket;Integrated Security=True;Encrypt=False"))
+                    {
+                        conn.Open();
+
+                        //delete
+                        SqlCommand com = new SqlCommand("DELETE FROM TMoshtari WHERE  (mkey = @mkey)", conn);
+                        com.Parameters.AddWithValue("@mkey", Convert.ToInt32(textBox1.Text));
+                        com.ExecuteNonQuery();
+
+                        //after delete:
+
+                        //textBox1.Text = textBox2.Text = textBox3.Text = textBox4.Text = "";
+                        //textBox1.Focus();
+                        MessageBox.Show("اطلاعات مشتری مورد نظر حذف شد", "پیام سیستم", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        FMoshtariEdit_Load(sender, e);
+
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"خطا: {ex.Message}", "پیام سیستم", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
         }
     }
 }

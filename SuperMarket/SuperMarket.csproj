@@ -112,7 +112,6 @@
     </None>
     <None Include="SuperMarketDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>SuperMarketDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
     <None Include="SuperMarketDataSet.xss">
