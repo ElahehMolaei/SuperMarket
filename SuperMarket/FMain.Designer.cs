@@ -36,11 +36,14 @@ namespace SuperMarket
             this.افزودنکاربرجدیدToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.اطلاعاتمشتریانToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.افزودنمشتریجدیدToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.ویرایشاطلاعاتمشتریانToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.اطلاعاتکاربرانToolStripMenuItem,
             this.اطلاعاتمشتریانToolStripMenuItem});
@@ -61,14 +64,16 @@ namespace SuperMarket
             // افزودنکاربرجدیدToolStripMenuItem
             // 
             this.افزودنکاربرجدیدToolStripMenuItem.Name = "افزودنکاربرجدیدToolStripMenuItem";
-            this.افزودنکاربرجدیدToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.افزودنکاربرجدیدToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.افزودنکاربرجدیدToolStripMenuItem.Text = "افزودن کاربر جدید";
             this.افزودنکاربرجدیدToolStripMenuItem.Click += new System.EventHandler(this.افزودنکاربرجدیدToolStripMenuItem_Click);
             // 
             // اطلاعاتمشتریانToolStripMenuItem
             // 
             this.اطلاعاتمشتریانToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.افزودنمشتریجدیدToolStripMenuItem});
+            this.افزودنمشتریجدیدToolStripMenuItem,
+            this.toolStripMenuItem1,
+            this.ویرایشاطلاعاتمشتریانToolStripMenuItem});
             this.اطلاعاتمشتریانToolStripMenuItem.Name = "اطلاعاتمشتریانToolStripMenuItem";
             this.اطلاعاتمشتریانToolStripMenuItem.Size = new System.Drawing.Size(105, 20);
             this.اطلاعاتمشتریانToolStripMenuItem.Text = "اطلاعات مشتریان";
@@ -79,6 +84,18 @@ namespace SuperMarket
             this.افزودنمشتریجدیدToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.افزودنمشتریجدیدToolStripMenuItem.Text = "افزودن مشتری جدید";
             this.افزودنمشتریجدیدToolStripMenuItem.Click += new System.EventHandler(this.افزودنمشتریجدیدToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(196, 6);
+            // 
+            // ویرایشاطلاعاتمشتریانToolStripMenuItem
+            // 
+            this.ویرایشاطلاعاتمشتریانToolStripMenuItem.Name = "ویرایشاطلاعاتمشتریانToolStripMenuItem";
+            this.ویرایشاطلاعاتمشتریانToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.ویرایشاطلاعاتمشتریانToolStripMenuItem.Text = "ویرایش اطلاعات مشتریان";
+            this.ویرایشاطلاعاتمشتریانToolStripMenuItem.Click += new System.EventHandler(this.ویرایشاطلاعاتمشتریانToolStripMenuItem_Click);
             // 
             // FMain
             // 
@@ -109,5 +126,7 @@ namespace SuperMarket
         private ToolStripMenuItem افزودنکاربرجدیدToolStripMenuItem;
         private ToolStripMenuItem اطلاعاتمشتریانToolStripMenuItem;
         private ToolStripMenuItem افزودنمشتریجدیدToolStripMenuItem;
+        private ToolStripSeparator toolStripMenuItem1;
+        private ToolStripMenuItem ویرایشاطلاعاتمشتریانToolStripMenuItem;
     }
 }

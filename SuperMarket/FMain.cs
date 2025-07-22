@@ -30,5 +30,11 @@ namespace SuperMarket
             FMoshtari fMoshtari = new FMoshtari();
             fMoshtari.ShowDialog();
         }
+
+        private void ویرایشاطلاعاتمشتریانToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FMoshtariEdit fMoshtariEdit = new FMoshtariEdit();
+            fMoshtariEdit.ShowDialog();
+        }
     }
 }

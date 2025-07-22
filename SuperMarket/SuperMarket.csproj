@@ -58,6 +58,12 @@
     <Compile Include="FMoshtari.Designer.cs">
       <DependentUpon>FMoshtari.cs</DependentUpon>
     </Compile>
+    <Compile Include="FMoshtariEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMoshtariEdit.Designer.cs">
+      <DependentUpon>FMoshtariEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="FUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +82,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FMoshtari.resx">
       <DependentUpon>FMoshtari.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMoshtariEdit.resx">
+      <DependentUpon>FMoshtariEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FUser.resx">
       <DependentUpon>FUser.cs</DependentUpon>
