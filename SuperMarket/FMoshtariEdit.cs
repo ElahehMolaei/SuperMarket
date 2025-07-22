@@ -25,6 +25,7 @@ namespace WindowsFormsApp1
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
+            //--
             if (checkCode==false)
             {
                 textBox1.Focus();
