@@ -15,7 +15,7 @@ namespace WindowsFormsApp1
     {
         //create a connection to our interested DB:
         SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=SuperMarket;Integrated Security=True;Encrypt=False");
-
+        Boolean checkcode;
         public FKala()
         {
             InitializeComponent();
@@ -60,6 +60,13 @@ namespace WindowsFormsApp1
         {
             if (textBox1.Text == "")
                 textBox1.Focus();
+            //چک تکراری بودن کد کالا 
+            //2 تا ره دیگه هم توی ترای هست که کامنت شده
+            else if(checkcode)
+            {
+                MessageBox.Show("قبلا این کد کالا ثبت شده است.", "پیام سیستم", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                textBox1.Focus();
+            }
             else if (textBox2.Text == "")
                 textBox2.Focus();
             else if (textBox3.Text == "")
@@ -100,16 +107,23 @@ namespace WindowsFormsApp1
                     {
                         conn.Open();
 
-                        // چک کردن تکراری نبودن کالا
-                        SqlCommand checkCmd = new SqlCommand("SELECT COUNT(*) FROM TKala WHERE kkey = @kkey", conn);
-                        checkCmd.Parameters.AddWithValue("@kkey", textBox1.Text);
-                        int kalaCount = (int)checkCmd.ExecuteScalar();
+                        // چک کردن تکراری نبودن کالا یک راهشم پایینتر توی تکست چنج هست برای تکست باکس 1
+                        //SqlCommand checkCmd = new SqlCommand("SELECT COUNT(*) FROM TKala WHERE kkey = @kkey", conn);
+                        //checkCmd.Parameters.AddWithValue("@kkey", textBox1.Text);
+                        //int kalaCount = (int)checkCmd.ExecuteScalar();
 
-                        if (kalaCount > 0)
-                        {
-                            MessageBox.Show("قبلا این کد کالا ثبت شده است.", "پیام سیستم", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            return; // خروج از متد اگر کالا تکراری باشد
-                        }
+                        //if (kalaCount > 0)
+                        //{
+                        //    MessageBox.Show("قبلا این کد کالا ثبت شده است.", "پیام سیستم", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //    return; // خروج از متد اگر کالا تکراری باشد
+                        //}
+
+                        //روش 2 چک تکراری بودن کد کالا 
+                        //if (checkcode)
+                        //{
+                        //    MessageBox.Show("قبلا این کد کالا ثبت شده است.", "پیام سیستم", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //    return; // خروج از متد اگر کالا تکراری باشد
+                        //}
 
                         // درج کالای جدید
                         SqlCommand insertCmd = new SqlCommand("INSERT INTO TKala (kkey, kname, price, mojodi) VALUES (@kkey,@kname,@price,@mojodi)", conn);
@@ -133,6 +147,26 @@ namespace WindowsFormsApp1
                     MessageBox.Show($"خطا: {ex.Message}", "پیام سیستم", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=SuperMarket;Integrated Security=True;Encrypt=False"))
+                {
+                    conn.Open();
+                    using (SqlCommand com = new SqlCommand("SELECT * FROM TKala WHERE kkey = @kkey", conn))
+                    {
+                        com.Parameters.AddWithValue("@kkey", Convert.ToInt64(textBox1.Text));
+                        checkcode = com.ExecuteReader().HasRows;
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                //MessageBox.Show($"خطا: {ex.Message}", "پیام سیستم", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
