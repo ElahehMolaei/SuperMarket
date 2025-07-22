@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FKala.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FKala.Designer.cs">
+      <DependentUpon>FKala.cs</DependentUpon>
+    </Compile>
     <Compile Include="FMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +83,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SuperMarketDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FKala.resx">
+      <DependentUpon>FKala.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FMain.resx">
       <DependentUpon>FMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -113,6 +122,7 @@
     <None Include="SuperMarketDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <SubType>Designer</SubType>
+      <LastGenOutput>SuperMarketDataSet1.Designer.cs</LastGenOutput>
     </None>
     <None Include="SuperMarketDataSet.xss">
       <DependentUpon>SuperMarketDataSet.xsd</DependentUpon>

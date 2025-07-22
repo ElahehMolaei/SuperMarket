@@ -36,5 +36,12 @@ namespace SuperMarket
             FMoshtariEdit fMoshtariEdit = new FMoshtariEdit();
             fMoshtariEdit.ShowDialog();
         }
+
+
+        private void افزودنکالایجدیدToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            FKala fKala = new FKala();
+            fKala.ShowDialog();
+        }
     }
 }
