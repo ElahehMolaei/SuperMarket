@@ -107,6 +107,12 @@ namespace WindowsFormsApp1
             da.Fill(dt);
             dataGridView1.DataSource = dt;
 
+
+            dataGridView1.Columns[0].Width = 100;
+            dataGridView1.Columns[1].Width = 150;
+            dataGridView1.Columns[2].Width = 250;
+            dataGridView1.Columns[3].Width = 100;
+
         }
 
 
@@ -157,6 +163,11 @@ namespace WindowsFormsApp1
                 textBox2.Text = textBox3.Text = textBox4.Text = "";
                 checkCode = false;
             }
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
 
         }
     }
