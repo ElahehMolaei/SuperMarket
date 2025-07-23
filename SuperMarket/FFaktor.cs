@@ -31,7 +31,7 @@ namespace WindowsFormsApp1
         }
 
         //another personal functions that I wanna write by myself!
-        public void newCustomerCode()
+        public void newFactorCode()
         {
             try
             {
@@ -56,8 +56,12 @@ namespace WindowsFormsApp1
 
         private void FFaktor_Load(object sender, EventArgs e)
         {
-            newCustomerCode();
+            newFactorCode();
             textBoxMkey.Focus();
+
+            //تاریخ شمسی
+            labelDate.Text =ShamsiDate.m2shamsi(DateTime.Now);
+
         }
 
         private void textBoxMkey_TextChanged(object sender, EventArgs e)
