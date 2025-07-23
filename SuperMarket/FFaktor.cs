@@ -69,7 +69,7 @@ namespace WindowsFormsApp1
             }
             try
             {
-                // استفاده از using برای اتصال و دستور
+                // استفاده از using برای اتصال و دستور.
                 using (SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=SuperMarket;Integrated Security=True;Encrypt=False"))
                 {
                     conn.Open();
