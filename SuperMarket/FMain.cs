@@ -49,5 +49,11 @@ namespace SuperMarket
             FKalaEdit fKalaEdit = new FKalaEdit();
             fKalaEdit.ShowDialog();
         }
+
+        private void فاکتورToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FFaktor fFaktor = new FFaktor();
+            fFaktor.ShowDialog();
+        }
     }
 }

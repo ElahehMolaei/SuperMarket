@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FFaktor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FFaktor.Designer.cs">
+      <DependentUpon>FFaktor.cs</DependentUpon>
+    </Compile>
     <Compile Include="FKala.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +95,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SuperMarketDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FFaktor.resx">
+      <DependentUpon>FFaktor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FKala.resx">
       <DependentUpon>FKala.cs</DependentUpon>
     </EmbeddedResource>
