@@ -43,5 +43,11 @@ namespace SuperMarket
             FKala fKala = new FKala();
             fKala.ShowDialog();
         }
+
+        private void ویرایشحذفاطلاعاتکالاهاToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FKalaEdit fKalaEdit = new FKalaEdit();
+            fKalaEdit.ShowDialog();
+        }
     }
 }

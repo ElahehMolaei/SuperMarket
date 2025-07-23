@@ -52,6 +52,12 @@
     <Compile Include="FKala.Designer.cs">
       <DependentUpon>FKala.cs</DependentUpon>
     </Compile>
+    <Compile Include="FKalaEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FKalaEdit.Designer.cs">
+      <DependentUpon>FKalaEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="FMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +91,9 @@
     </Compile>
     <EmbeddedResource Include="FKala.resx">
       <DependentUpon>FKala.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FKalaEdit.resx">
+      <DependentUpon>FKalaEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FMain.resx">
       <DependentUpon>FMain.cs</DependentUpon>
