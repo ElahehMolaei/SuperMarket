@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using WindowsFormsApp1;
 
 namespace SuperMarket
 {
@@ -94,6 +95,8 @@ namespace SuperMarket
                         insertCmd.Parameters.AddWithValue("@pass", textBox2.Text);
                         insertCmd.Parameters.AddWithValue("@userType", radioButton1.Checked ? 0 : 1);
                         insertCmd.Parameters.AddWithValue("@tedadevorood",0);
+                        insertCmd.Parameters.AddWithValue("lastDateVorood", ShamsiDate.m2shamsi(DateTime.Now));
+                        insertCmd.Parameters.AddWithValue("lastTimeVorood", DateTime.Now.ToLongTimeString());
 
                         insertCmd.ExecuteNonQuery();
 

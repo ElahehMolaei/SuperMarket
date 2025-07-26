@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnSabtFactor = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.textBoxTedadKala = new System.Windows.Forms.TextBox();
             this.textBoxKkey = new System.Windows.Forms.TextBox();
             this.lablKalamojodi = new System.Windows.Forms.Label();
@@ -61,7 +62,6 @@
             this.labelDate = new System.Windows.Forms.Label();
             this.lblFactorNumber = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -97,8 +97,8 @@
             // 
             // dataGridView1
             // 
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(16, 40);
@@ -137,6 +137,16 @@
             this.groupBox4.TabIndex = 2;
             this.groupBox4.TabStop = false;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.Red;
+            this.label5.Location = new System.Drawing.Point(19, 86);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(31, 13);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "تومان";
+            // 
             // textBoxTedadKala
             // 
             this.textBoxTedadKala.Location = new System.Drawing.Point(19, 21);
@@ -157,7 +167,7 @@
             // lablKalamojodi
             // 
             this.lablKalamojodi.AutoSize = true;
-            this.lablKalamojodi.Location = new System.Drawing.Point(370, 110);
+            this.lablKalamojodi.Location = new System.Drawing.Point(242, 110);
             this.lablKalamojodi.Name = "lablKalamojodi";
             this.lablKalamojodi.Size = new System.Drawing.Size(13, 13);
             this.lablKalamojodi.TabIndex = 1;
@@ -184,7 +194,7 @@
             // lblKalaname
             // 
             this.lblKalaname.AutoSize = true;
-            this.lblKalaname.Location = new System.Drawing.Point(370, 65);
+            this.lblKalaname.Location = new System.Drawing.Point(242, 65);
             this.lblKalaname.Name = "lblKalaname";
             this.lblKalaname.Size = new System.Drawing.Size(13, 13);
             this.lblKalaname.TabIndex = 1;
@@ -254,7 +264,7 @@
             // lblMoshtariAddr
             // 
             this.lblMoshtariAddr.AutoSize = true;
-            this.lblMoshtariAddr.Location = new System.Drawing.Point(370, 110);
+            this.lblMoshtariAddr.Location = new System.Drawing.Point(238, 110);
             this.lblMoshtariAddr.Name = "lblMoshtariAddr";
             this.lblMoshtariAddr.Size = new System.Drawing.Size(13, 13);
             this.lblMoshtariAddr.TabIndex = 1;
@@ -271,12 +281,14 @@
             // 
             // lblMoshtariName
             // 
+            this.lblMoshtariName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMoshtariName.AutoSize = true;
-            this.lblMoshtariName.Location = new System.Drawing.Point(370, 65);
+            this.lblMoshtariName.Location = new System.Drawing.Point(238, 65);
             this.lblMoshtariName.Name = "lblMoshtariName";
             this.lblMoshtariName.Size = new System.Drawing.Size(13, 13);
             this.lblMoshtariName.TabIndex = 1;
             this.lblMoshtariName.Text = "0";
+            this.lblMoshtariName.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label9
             // 
@@ -390,16 +402,6 @@
             this.label1.Size = new System.Drawing.Size(73, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "شماره فاکتور :";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(19, 86);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(31, 13);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "تومان";
             // 
             // FFaktor
             // 
