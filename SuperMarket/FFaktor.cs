@@ -310,6 +310,16 @@ namespace WindowsFormsApp1
                     dataGridView1.Columns[3].Width = 60; //تعداد
                     dataGridView1.Columns[3].Width = 80; // قیمت کل
 
+
+
+                    //محاسبه مبلغ کل فاکتور
+                    SqlDataAdapter da2 = new SqlDataAdapter("SELECT  SUM ( TAghlam.tedad * TKala.price ) FROM  TKala INNER JOIN TAghlam ON TKala.kkey = TAghlam.kkey  WHERE TAghlam.fkey=@fkey ", conn);
+                    da2.SelectCommand.Parameters.AddWithValue("@fkey", Convert.ToInt32(lblFactorNumber.Text));
+                    DataTable dt2 = new DataTable();
+
+                    da2.Fill(dt2);
+
+                   lblSumPrice.Text =  dt2.Rows[0].ItemArray[0].ToString() + " تومان ";
                 }
 
             }
@@ -360,7 +370,7 @@ namespace WindowsFormsApp1
                     {
                         lblMoshtariName.Text = dt.Rows[0].ItemArray[0].ToString(); // name
                         lblMoshtariAddr.Text = dt.Rows[0].ItemArray[1].ToString(); // address
-                        lblMoshtariPhone.Text = dt.Rows[0].ItemArray[2].ToString(); // phone
+                        lblMoshtariPhone.Text = "0"+dt.Rows[0].ItemArray[2].ToString(); // phone
 
                         checkMCode = true;
                     }

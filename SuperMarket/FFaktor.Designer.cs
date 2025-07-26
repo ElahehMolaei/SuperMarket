@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -61,6 +61,7 @@
             this.labelDate = new System.Windows.Forms.Label();
             this.lblFactorNumber = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -96,8 +97,8 @@
             // 
             // dataGridView1
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(16, 40);
@@ -119,6 +120,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.label5);
             this.groupBox4.Controls.Add(this.textBoxTedadKala);
             this.groupBox4.Controls.Add(this.textBoxKkey);
             this.groupBox4.Controls.Add(this.lablKalamojodi);
@@ -389,6 +391,16 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "شماره فاکتور :";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.Red;
+            this.label5.Location = new System.Drawing.Point(19, 86);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(31, 13);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "تومان";
+            // 
             // FFaktor
             // 
             this.AcceptButton = this.btnSabtFactor;
@@ -454,5 +466,6 @@
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblSumPrice;
+        private System.Windows.Forms.Label label5;
     }
 }
