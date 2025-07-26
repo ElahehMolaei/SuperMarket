@@ -60,6 +60,12 @@ namespace WindowsFormsApp1
                                 Memory.passwordMem = dt.Rows[0].ItemArray[1].ToString(); //bayad ersal she be form factor
                                 Memory.usertypeMem = Convert.ToInt32(dt.Rows[0].ItemArray[2]); //bayad ersal she be form factor
 
+                                // بروزرسانی اطلاعات کاربر 
+                                SqlCommand cmd = new SqlCommand("UPDATE  TUser SET   tedadevorood = tedadevorood + 1, lastDateVorood = @lastDateVorood, lastTimeVorood = @lastTimeVorood WHERE     (username = @username)", conn);
+                                cmd.Parameters.AddWithValue("lastDateVorood",ShamsiDate.m2shamsi(DateTime.Now));
+                                cmd.Parameters.AddWithValue("lastTimeVorood", DateTime.Now.ToLongTimeString());
+                                cmd.Parameters.AddWithValue("username", (dt.Rows[0].ItemArray[0]).ToString());
+                                cmd.ExecuteNonQuery();
                                 if (Memory.usertypeMem == 1) //نقش مدیر
                                 {
                                     MessageBox.Show("ورود مدیر موفقیت آمیز - در حال هدایت به صفحه ی اصلی");

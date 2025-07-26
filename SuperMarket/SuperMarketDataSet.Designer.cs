@@ -1373,7 +1373,7 @@ namespace WindowsFormsApp1 {
             
             private global::System.Data.DataColumn columnaddress;
             
-            private global::System.Data.DataColumn columntell;
+            private global::System.Data.DataColumn columnphone;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -1442,9 +1442,9 @@ namespace WindowsFormsApp1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn tellColumn {
+            public global::System.Data.DataColumn phoneColumn {
                 get {
-                    return this.columntell;
+                    return this.columnphone;
                 }
             }
             
@@ -1485,14 +1485,14 @@ namespace WindowsFormsApp1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public TMoshtariRow AddTMoshtariRow(int mkey, string name, string family, string address, int tell) {
+            public TMoshtariRow AddTMoshtariRow(int mkey, string name, string family, string address, long phone) {
                 TMoshtariRow rowTMoshtariRow = ((TMoshtariRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         mkey,
                         name,
                         family,
                         address,
-                        tell};
+                        phone};
                 rowTMoshtariRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowTMoshtariRow);
                 return rowTMoshtariRow;
@@ -1526,7 +1526,7 @@ namespace WindowsFormsApp1 {
                 this.columnname = base.Columns["name"];
                 this.columnfamily = base.Columns["family"];
                 this.columnaddress = base.Columns["address"];
-                this.columntell = base.Columns["tell"];
+                this.columnphone = base.Columns["phone"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1540,8 +1540,8 @@ namespace WindowsFormsApp1 {
                 base.Columns.Add(this.columnfamily);
                 this.columnaddress = new global::System.Data.DataColumn("address", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnaddress);
-                this.columntell = new global::System.Data.DataColumn("tell", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columntell);
+                this.columnphone = new global::System.Data.DataColumn("phone", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnphone);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnmkey}, true));
                 this.columnmkey.AllowDBNull = false;
@@ -1688,6 +1688,12 @@ namespace WindowsFormsApp1 {
             
             private global::System.Data.DataColumn columnuserType;
             
+            private global::System.Data.DataColumn columntedadevorood;
+            
+            private global::System.Data.DataColumn columnlastDateVorood;
+            
+            private global::System.Data.DataColumn columnlastTimeVorood;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public TUserDataTable() {
@@ -1747,6 +1753,30 @@ namespace WindowsFormsApp1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn tedadevoroodColumn {
+                get {
+                    return this.columntedadevorood;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn lastDateVoroodColumn {
+                get {
+                    return this.columnlastDateVorood;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn lastTimeVoroodColumn {
+                get {
+                    return this.columnlastTimeVorood;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1782,12 +1812,15 @@ namespace WindowsFormsApp1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public TUserRow AddTUserRow(string username, string pass, int userType) {
+            public TUserRow AddTUserRow(string username, string pass, int userType, int tedadevorood, string lastDateVorood, string lastTimeVorood) {
                 TUserRow rowTUserRow = ((TUserRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         username,
                         pass,
-                        userType};
+                        userType,
+                        tedadevorood,
+                        lastDateVorood,
+                        lastTimeVorood};
                 rowTUserRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowTUserRow);
                 return rowTUserRow;
@@ -1820,6 +1853,9 @@ namespace WindowsFormsApp1 {
                 this.columnusername = base.Columns["username"];
                 this.columnpass = base.Columns["pass"];
                 this.columnuserType = base.Columns["userType"];
+                this.columntedadevorood = base.Columns["tedadevorood"];
+                this.columnlastDateVorood = base.Columns["lastDateVorood"];
+                this.columnlastTimeVorood = base.Columns["lastTimeVorood"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1831,12 +1867,20 @@ namespace WindowsFormsApp1 {
                 base.Columns.Add(this.columnpass);
                 this.columnuserType = new global::System.Data.DataColumn("userType", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnuserType);
+                this.columntedadevorood = new global::System.Data.DataColumn("tedadevorood", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntedadevorood);
+                this.columnlastDateVorood = new global::System.Data.DataColumn("lastDateVorood", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnlastDateVorood);
+                this.columnlastTimeVorood = new global::System.Data.DataColumn("lastTimeVorood", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnlastTimeVorood);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnusername}, true));
                 this.columnusername.AllowDBNull = false;
                 this.columnusername.Unique = true;
                 this.columnusername.MaxLength = 50;
                 this.columnpass.MaxLength = 50;
+                this.columnlastDateVorood.MaxLength = 50;
+                this.columnlastTimeVorood.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2417,17 +2461,17 @@ namespace WindowsFormsApp1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int tell {
+            public long phone {
                 get {
                     try {
-                        return ((int)(this[this.tableTMoshtari.tellColumn]));
+                        return ((long)(this[this.tableTMoshtari.phoneColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'tell\' in table \'TMoshtari\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'phone\' in table \'TMoshtari\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableTMoshtari.tellColumn] = value;
+                    this[this.tableTMoshtari.phoneColumn] = value;
                 }
             }
             
@@ -2469,14 +2513,14 @@ namespace WindowsFormsApp1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IstellNull() {
-                return this.IsNull(this.tableTMoshtari.tellColumn);
+            public bool IsphoneNull() {
+                return this.IsNull(this.tableTMoshtari.phoneColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SettellNull() {
-                this[this.tableTMoshtari.tellColumn] = global::System.Convert.DBNull;
+            public void SetphoneNull() {
+                this[this.tableTMoshtari.phoneColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2550,6 +2594,54 @@ namespace WindowsFormsApp1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int tedadevorood {
+                get {
+                    try {
+                        return ((int)(this[this.tableTUser.tedadevoroodColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'tedadevorood\' in table \'TUser\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTUser.tedadevoroodColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string lastDateVorood {
+                get {
+                    try {
+                        return ((string)(this[this.tableTUser.lastDateVoroodColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'lastDateVorood\' in table \'TUser\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTUser.lastDateVoroodColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string lastTimeVorood {
+                get {
+                    try {
+                        return ((string)(this[this.tableTUser.lastTimeVoroodColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'lastTimeVorood\' in table \'TUser\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTUser.lastTimeVoroodColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IspassNull() {
                 return this.IsNull(this.tableTUser.passColumn);
             }
@@ -2570,6 +2662,42 @@ namespace WindowsFormsApp1 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetuserTypeNull() {
                 this[this.tableTUser.userTypeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IstedadevoroodNull() {
+                return this.IsNull(this.tableTUser.tedadevoroodColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SettedadevoroodNull() {
+                this[this.tableTUser.tedadevoroodColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IslastDateVoroodNull() {
+                return this.IsNull(this.tableTUser.lastDateVoroodColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetlastDateVoroodNull() {
+                this[this.tableTUser.lastDateVoroodColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IslastTimeVoroodNull() {
+                return this.IsNull(this.tableTUser.lastTimeVoroodColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetlastTimeVoroodNull() {
+                this[this.tableTUser.lastTimeVoroodColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4044,11 +4172,11 @@ SELECT kkey, kname, price, mojodi FROM TKala WHERE (kkey = @kkey)";
             tableMapping.ColumnMappings.Add("name", "name");
             tableMapping.ColumnMappings.Add("family", "family");
             tableMapping.ColumnMappings.Add("address", "address");
-            tableMapping.ColumnMappings.Add("tell", "tell");
+            tableMapping.ColumnMappings.Add("phone", "phone");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[TMoshtari] WHERE (([mkey] = @Original_mkey) AND ((@IsNull_name = 1 AND [name] IS NULL) OR ([name] = @Original_name)) AND ((@IsNull_family = 1 AND [family] IS NULL) OR ([family] = @Original_family)) AND ((@IsNull_address = 1 AND [address] IS NULL) OR ([address] = @Original_address)) AND ((@IsNull_tell = 1 AND [tell] IS NULL) OR ([tell] = @Original_tell)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[TMoshtari] WHERE (([mkey] = @Original_mkey) AND ((@IsNull_name = 1 AND [name] IS NULL) OR ([name] = @Original_name)) AND ((@IsNull_family = 1 AND [family] IS NULL) OR ([family] = @Original_family)) AND ((@IsNull_address = 1 AND [address] IS NULL) OR ([address] = @Original_address)) AND ((@IsNull_phone = 1 AND [phone] IS NULL) OR ([phone] = @Original_phone)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_mkey", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "mkey", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -4057,29 +4185,29 @@ SELECT kkey, kname, price, mojodi FROM TKala WHERE (kkey = @kkey)";
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_family", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "family", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_address", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "address", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_address", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "address", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_tell", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tell", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_tell", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tell", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_phone", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "phone", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_phone", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "phone", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[TMoshtari] ([mkey], [name], [family], [address], [tell]) VALUE" +
-                "S (@mkey, @name, @family, @address, @tell);\r\nSELECT mkey, name, family, address," +
-                " tell FROM TMoshtari WHERE (mkey = @mkey)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[TMoshtari] ([mkey], [name], [family], [address], [phone]) VALU" +
+                "ES (@mkey, @name, @family, @address, @phone);\r\nSELECT mkey, name, family, addres" +
+                "s, phone FROM TMoshtari WHERE (mkey = @mkey)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@mkey", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "mkey", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@family", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "family", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@address", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "address", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tell", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tell", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@phone", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "phone", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[TMoshtari] SET [mkey] = @mkey, [name] = @name, [family] = @family, [address] = @address, [tell] = @tell WHERE (([mkey] = @Original_mkey) AND ((@IsNull_name = 1 AND [name] IS NULL) OR ([name] = @Original_name)) AND ((@IsNull_family = 1 AND [family] IS NULL) OR ([family] = @Original_family)) AND ((@IsNull_address = 1 AND [address] IS NULL) OR ([address] = @Original_address)) AND ((@IsNull_tell = 1 AND [tell] IS NULL) OR ([tell] = @Original_tell)));
-SELECT mkey, name, family, address, tell FROM TMoshtari WHERE (mkey = @mkey)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[TMoshtari] SET [mkey] = @mkey, [name] = @name, [family] = @family, [address] = @address, [phone] = @phone WHERE (([mkey] = @Original_mkey) AND ((@IsNull_name = 1 AND [name] IS NULL) OR ([name] = @Original_name)) AND ((@IsNull_family = 1 AND [family] IS NULL) OR ([family] = @Original_family)) AND ((@IsNull_address = 1 AND [address] IS NULL) OR ([address] = @Original_address)) AND ((@IsNull_phone = 1 AND [phone] IS NULL) OR ([phone] = @Original_phone)));
+SELECT mkey, name, family, address, phone FROM TMoshtari WHERE (mkey = @mkey)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@mkey", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "mkey", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@family", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "family", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@address", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "address", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tell", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tell", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@phone", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "phone", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_mkey", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "mkey", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -4087,8 +4215,8 @@ SELECT mkey, name, family, address, tell FROM TMoshtari WHERE (mkey = @mkey)";
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_family", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "family", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_address", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "address", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_address", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "address", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_tell", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tell", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_tell", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tell", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_phone", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "phone", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_phone", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "phone", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4104,7 +4232,7 @@ SELECT mkey, name, family, address, tell FROM TMoshtari WHERE (mkey = @mkey)";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT mkey, name, family, address, tell FROM dbo.TMoshtari";
+            this._commandCollection[0].CommandText = "SELECT mkey, name, family, address, phone FROM dbo.TMoshtari";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -4165,7 +4293,7 @@ SELECT mkey, name, family, address, tell FROM TMoshtari WHERE (mkey = @mkey)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_mkey, string Original_name, string Original_family, string Original_address, global::System.Nullable<int> Original_tell) {
+        public virtual int Delete(int Original_mkey, string Original_name, string Original_family, string Original_address, global::System.Nullable<long> Original_phone) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_mkey));
             if ((Original_name == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
@@ -4191,9 +4319,9 @@ SELECT mkey, name, family, address, tell FROM TMoshtari WHERE (mkey = @mkey)";
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_address));
             }
-            if ((Original_tell.HasValue == true)) {
+            if ((Original_phone.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((int)(Original_tell.Value));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((long)(Original_phone.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
@@ -4219,7 +4347,7 @@ SELECT mkey, name, family, address, tell FROM TMoshtari WHERE (mkey = @mkey)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int mkey, string name, string family, string address, global::System.Nullable<int> tell) {
+        public virtual int Insert(int mkey, string name, string family, string address, global::System.Nullable<long> phone) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(mkey));
             if ((name == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -4239,8 +4367,8 @@ SELECT mkey, name, family, address, tell FROM TMoshtari WHERE (mkey = @mkey)";
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = ((string)(address));
             }
-            if ((tell.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((int)(tell.Value));
+            if ((phone.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((long)(phone.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
@@ -4265,7 +4393,7 @@ SELECT mkey, name, family, address, tell FROM TMoshtari WHERE (mkey = @mkey)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int mkey, string name, string family, string address, global::System.Nullable<int> tell, int Original_mkey, string Original_name, string Original_family, string Original_address, global::System.Nullable<int> Original_tell) {
+        public virtual int Update(int mkey, string name, string family, string address, global::System.Nullable<long> phone, int Original_mkey, string Original_name, string Original_family, string Original_address, global::System.Nullable<long> Original_phone) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(mkey));
             if ((name == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -4285,8 +4413,8 @@ SELECT mkey, name, family, address, tell FROM TMoshtari WHERE (mkey = @mkey)";
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(address));
             }
-            if ((tell.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(tell.Value));
+            if ((phone.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((long)(phone.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
@@ -4316,9 +4444,9 @@ SELECT mkey, name, family, address, tell FROM TMoshtari WHERE (mkey = @mkey)";
                 this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
                 this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_address));
             }
-            if ((Original_tell.HasValue == true)) {
+            if ((Original_phone.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_tell.Value));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((long)(Original_phone.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
@@ -4344,8 +4472,8 @@ SELECT mkey, name, family, address, tell FROM TMoshtari WHERE (mkey = @mkey)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string name, string family, string address, global::System.Nullable<int> tell, int Original_mkey, string Original_name, string Original_family, string Original_address, global::System.Nullable<int> Original_tell) {
-            return this.Update(Original_mkey, name, family, address, tell, Original_mkey, Original_name, Original_family, Original_address, Original_tell);
+        public virtual int Update(string name, string family, string address, global::System.Nullable<long> phone, int Original_mkey, string Original_name, string Original_family, string Original_address, global::System.Nullable<long> Original_phone) {
+            return this.Update(Original_mkey, name, family, address, phone, Original_mkey, Original_name, Original_family, Original_address, Original_phone);
         }
     }
     
@@ -4473,40 +4601,58 @@ SELECT mkey, name, family, address, tell FROM TMoshtari WHERE (mkey = @mkey)";
             tableMapping.ColumnMappings.Add("username", "username");
             tableMapping.ColumnMappings.Add("pass", "pass");
             tableMapping.ColumnMappings.Add("userType", "userType");
+            tableMapping.ColumnMappings.Add("tedadevorood", "tedadevorood");
+            tableMapping.ColumnMappings.Add("lastDateVorood", "lastDateVorood");
+            tableMapping.ColumnMappings.Add("lastTimeVorood", "lastTimeVorood");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[TUser] WHERE (([username] = @Original_username) AND ((@IsNull_" +
-                "pass = 1 AND [pass] IS NULL) OR ([pass] = @Original_pass)) AND ((@IsNull_userTyp" +
-                "e = 1 AND [userType] IS NULL) OR ([userType] = @Original_userType)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[TUser] WHERE (([username] = @Original_username) AND ((@IsNull_pass = 1 AND [pass] IS NULL) OR ([pass] = @Original_pass)) AND ((@IsNull_userType = 1 AND [userType] IS NULL) OR ([userType] = @Original_userType)) AND ((@IsNull_tedadevorood = 1 AND [tedadevorood] IS NULL) OR ([tedadevorood] = @Original_tedadevorood)) AND ((@IsNull_lastDateVorood = 1 AND [lastDateVorood] IS NULL) OR ([lastDateVorood] = @Original_lastDateVorood)) AND ((@IsNull_lastTimeVorood = 1 AND [lastTimeVorood] IS NULL) OR ([lastTimeVorood] = @Original_lastTimeVorood)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_username", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "username", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_pass", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pass", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_pass", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pass", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_userType", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "userType", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_userType", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "userType", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_tedadevorood", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tedadevorood", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_tedadevorood", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tedadevorood", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_lastDateVorood", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "lastDateVorood", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_lastDateVorood", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "lastDateVorood", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_lastTimeVorood", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "lastTimeVorood", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_lastTimeVorood", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "lastTimeVorood", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[TUser] ([username], [pass], [userType]) VALUES (@username, @pa" +
-                "ss, @userType);\r\nSELECT username, pass, userType FROM TUser WHERE (username = @u" +
-                "sername)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[TUser] ([username], [pass], [userType], [tedadevorood], [lastDateVorood], [lastTimeVorood]) VALUES (@username, @pass, @userType, @tedadevorood, @lastDateVorood, @lastTimeVorood);
+SELECT username, pass, userType, tedadevorood, lastDateVorood, lastTimeVorood FROM TUser WHERE (username = @username)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@username", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "username", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pass", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pass", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@userType", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "userType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tedadevorood", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tedadevorood", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@lastDateVorood", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "lastDateVorood", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@lastTimeVorood", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "lastTimeVorood", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[TUser] SET [username] = @username, [pass] = @pass, [userType] = @userType WHERE (([username] = @Original_username) AND ((@IsNull_pass = 1 AND [pass] IS NULL) OR ([pass] = @Original_pass)) AND ((@IsNull_userType = 1 AND [userType] IS NULL) OR ([userType] = @Original_userType)));
-SELECT username, pass, userType FROM TUser WHERE (username = @username)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[TUser] SET [username] = @username, [pass] = @pass, [userType] = @userType, [tedadevorood] = @tedadevorood, [lastDateVorood] = @lastDateVorood, [lastTimeVorood] = @lastTimeVorood WHERE (([username] = @Original_username) AND ((@IsNull_pass = 1 AND [pass] IS NULL) OR ([pass] = @Original_pass)) AND ((@IsNull_userType = 1 AND [userType] IS NULL) OR ([userType] = @Original_userType)) AND ((@IsNull_tedadevorood = 1 AND [tedadevorood] IS NULL) OR ([tedadevorood] = @Original_tedadevorood)) AND ((@IsNull_lastDateVorood = 1 AND [lastDateVorood] IS NULL) OR ([lastDateVorood] = @Original_lastDateVorood)) AND ((@IsNull_lastTimeVorood = 1 AND [lastTimeVorood] IS NULL) OR ([lastTimeVorood] = @Original_lastTimeVorood)));
+SELECT username, pass, userType, tedadevorood, lastDateVorood, lastTimeVorood FROM TUser WHERE (username = @username)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@username", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "username", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pass", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pass", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@userType", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "userType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tedadevorood", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tedadevorood", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@lastDateVorood", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "lastDateVorood", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@lastTimeVorood", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "lastTimeVorood", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_username", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "username", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_pass", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pass", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_pass", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pass", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_userType", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "userType", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_userType", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "userType", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_tedadevorood", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tedadevorood", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_tedadevorood", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tedadevorood", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_lastDateVorood", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "lastDateVorood", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_lastDateVorood", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "lastDateVorood", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_lastTimeVorood", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "lastTimeVorood", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_lastTimeVorood", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "lastTimeVorood", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4522,7 +4668,8 @@ SELECT username, pass, userType FROM TUser WHERE (username = @username)";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT username, pass, userType FROM dbo.TUser";
+            this._commandCollection[0].CommandText = "SELECT username, pass, userType, tedadevorood, lastDateVorood, lastTimeVorood FRO" +
+                "M dbo.TUser";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -4583,7 +4730,7 @@ SELECT username, pass, userType FROM TUser WHERE (username = @username)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_username, string Original_pass, global::System.Nullable<int> Original_userType) {
+        public virtual int Delete(string Original_username, string Original_pass, global::System.Nullable<int> Original_userType, global::System.Nullable<int> Original_tedadevorood, string Original_lastDateVorood, string Original_lastTimeVorood) {
             if ((Original_username == null)) {
                 throw new global::System.ArgumentNullException("Original_username");
             }
@@ -4606,6 +4753,30 @@ SELECT username, pass, userType FROM TUser WHERE (username = @username)";
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
+            if ((Original_tedadevorood.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_tedadevorood.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((Original_lastDateVorood == null)) {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_lastDateVorood));
+            }
+            if ((Original_lastTimeVorood == null)) {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_lastTimeVorood));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4626,7 +4797,7 @@ SELECT username, pass, userType FROM TUser WHERE (username = @username)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string username, string pass, global::System.Nullable<int> userType) {
+        public virtual int Insert(string username, string pass, global::System.Nullable<int> userType, global::System.Nullable<int> tedadevorood, string lastDateVorood, string lastTimeVorood) {
             if ((username == null)) {
                 throw new global::System.ArgumentNullException("username");
             }
@@ -4644,6 +4815,24 @@ SELECT username, pass, userType FROM TUser WHERE (username = @username)";
             }
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((tedadevorood.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((int)(tedadevorood.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((lastDateVorood == null)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(lastDateVorood));
+            }
+            if ((lastTimeVorood == null)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(lastTimeVorood));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4665,7 +4854,7 @@ SELECT username, pass, userType FROM TUser WHERE (username = @username)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string username, string pass, global::System.Nullable<int> userType, string Original_username, string Original_pass, global::System.Nullable<int> Original_userType) {
+        public virtual int Update(string username, string pass, global::System.Nullable<int> userType, global::System.Nullable<int> tedadevorood, string lastDateVorood, string lastTimeVorood, string Original_username, string Original_pass, global::System.Nullable<int> Original_userType, global::System.Nullable<int> Original_tedadevorood, string Original_lastDateVorood, string Original_lastTimeVorood) {
             if ((username == null)) {
                 throw new global::System.ArgumentNullException("username");
             }
@@ -4684,27 +4873,69 @@ SELECT username, pass, userType FROM TUser WHERE (username = @username)";
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
+            if ((tedadevorood.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(tedadevorood.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((lastDateVorood == null)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(lastDateVorood));
+            }
+            if ((lastTimeVorood == null)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(lastTimeVorood));
+            }
             if ((Original_username == null)) {
                 throw new global::System.ArgumentNullException("Original_username");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Original_username));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_username));
             }
             if ((Original_pass == null)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_pass));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_pass));
             }
             if ((Original_userType.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_userType.Value));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_userType.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            if ((Original_tedadevorood.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_tedadevorood.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            if ((Original_lastDateVorood == null)) {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_lastDateVorood));
+            }
+            if ((Original_lastTimeVorood == null)) {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_lastTimeVorood));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4726,8 +4957,8 @@ SELECT username, pass, userType FROM TUser WHERE (username = @username)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string pass, global::System.Nullable<int> userType, string Original_username, string Original_pass, global::System.Nullable<int> Original_userType) {
-            return this.Update(Original_username, pass, userType, Original_username, Original_pass, Original_userType);
+        public virtual int Update(string pass, global::System.Nullable<int> userType, global::System.Nullable<int> tedadevorood, string lastDateVorood, string lastTimeVorood, string Original_username, string Original_pass, global::System.Nullable<int> Original_userType, global::System.Nullable<int> Original_tedadevorood, string Original_lastDateVorood, string Original_lastTimeVorood) {
+            return this.Update(Original_username, pass, userType, tedadevorood, lastDateVorood, lastTimeVorood, Original_username, Original_pass, Original_userType, Original_tedadevorood, Original_lastDateVorood, Original_lastTimeVorood);
         }
     }
     

@@ -43,6 +43,7 @@ namespace SuperMarket
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.ویرایشحذفاطلاعاتکالاهاToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.فاکتورToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuReport = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,7 +54,8 @@ namespace SuperMarket
             this.اطلاعاتکاربرانToolStripMenuItem,
             this.اطلاعاتمشتریانToolStripMenuItem,
             this.اطلاعاتکالاToolStripMenuItem,
-            this.فاکتورToolStripMenuItem});
+            this.فاکتورToolStripMenuItem,
+            this.menuReport});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(686, 24);
@@ -141,6 +143,13 @@ namespace SuperMarket
             this.فاکتورToolStripMenuItem.Text = "فاکتور";
             this.فاکتورToolStripMenuItem.Click += new System.EventHandler(this.فاکتورToolStripMenuItem_Click);
             // 
+            // menuReport
+            // 
+            this.menuReport.Name = "menuReport";
+            this.menuReport.Size = new System.Drawing.Size(60, 20);
+            this.menuReport.Text = "گزارشات";
+            this.menuReport.Click += new System.EventHandler(this.menuReport_Click);
+            // 
             // FMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -178,5 +187,6 @@ namespace SuperMarket
         private ToolStripSeparator toolStripMenuItem2;
         private ToolStripMenuItem ویرایشحذفاطلاعاتکالاهاToolStripMenuItem;
         private ToolStripMenuItem فاکتورToolStripMenuItem;
+        private ToolStripMenuItem menuReport;
     }
 }

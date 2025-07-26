@@ -72,7 +72,21 @@ namespace SuperMarket
                 FLogin fLogin = new FLogin();
                 fLogin.ShowDialog();
             }
+            if (Memory.usertypeMem == 0)//کاربر عادی تب گزارسات براش غیر فعال شه 
+            {
+                menuReport.Enabled = false;
+            }
+            else
+            {
+                menuReport.Enabled = true;
+            }
 
+
+        }
+
+        private void menuReport_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }

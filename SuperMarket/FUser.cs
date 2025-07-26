@@ -89,10 +89,12 @@ namespace SuperMarket
                         }
 
                         // درج کاربر جدید
-                        SqlCommand insertCmd = new SqlCommand("INSERT INTO TUser (username, pass, userType) VALUES (@username, @pass, @userType)", conn);
+                        SqlCommand insertCmd = new SqlCommand("INSERT INTO TUser  (username, pass, userType, tedadevorood, lastDateVorood, lastTimeVorood) VALUES   (@username,@pass,@userType,@tedadevorood,@lastDateVorood,@lastTimeVorood)", conn);
                         insertCmd.Parameters.AddWithValue("@username", textBox1.Text);
                         insertCmd.Parameters.AddWithValue("@pass", textBox2.Text);
                         insertCmd.Parameters.AddWithValue("@userType", radioButton1.Checked ? 0 : 1);
+                        insertCmd.Parameters.AddWithValue("@tedadevorood",0);
+
                         insertCmd.ExecuteNonQuery();
 
                         textBox1.Text = textBox2.Text = "";
@@ -114,10 +116,31 @@ namespace SuperMarket
         private void FUser_Load(object sender, EventArgs e)
         {
             //SELECT
-            SqlDataAdapter da = new SqlDataAdapter("SELECT   username AS [نام کاربری], pass AS [رمز عبور], userType AS [سطح دسترسی]\r\nFROM         TUser", conn);
+            //SqlDataAdapter da = new SqlDataAdapter("SELECT   username AS [نام کاربری], userType AS [سطح دسترسی], tedadevorood AS [تعداد ورود], lastDateVorood AS [تاریخ آخرین ورود], lastTimeVorood AS [زمان آخرین ورود] FROM   TUser", conn);
+            SqlDataAdapter da = new SqlDataAdapter(@"
+                                                    SELECT 
+                                                        username AS [نام کاربری], 
+                                                        CASE 
+                                                            WHEN userType = 0 THEN N'کاربر عادی' 
+                                                            WHEN userType = 1 THEN N'مدیر سیستم' 
+                                                            ELSE N'نامشخص'
+                                                        END AS [سطح دسترسی], 
+                                                        tedadevorood AS [تعداد ورود], 
+                                                        lastDateVorood AS [تاریخ آخرین ورود], 
+                                                        lastTimeVorood AS [زمان آخرین ورود]
+                                                    FROM TUser", conn);
+
             DataTable dt = new DataTable();
             da.Fill(dt);
             dataGridView1.DataSource = dt;
+
+            dataGridView1.Columns[0].Width = 100;
+            dataGridView1.Columns[1].Width = 100;
+            dataGridView1.Columns[2].Width = 70;
+            dataGridView1.Columns[3].Width = 150;
+            dataGridView1.Columns[4].Width = 150;
+
+
         }
     }
 }
