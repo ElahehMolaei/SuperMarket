@@ -24,6 +24,9 @@ namespace WindowsFormsApp1
 
 
         Boolean checkFactor = false; //factor sabt nashode
+
+        //--هنگام ثبت فاکتور برای مشتری باید کد مشتری سیو شه تا برای مشتری دیگه در همون فاکتور نشه ثبت کرد
+        int savedMkeyFactor;
         //create a connection to our interested DB:
         SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=SuperMarket;Integrated Security=True;Encrypt=False");
 
@@ -37,20 +40,20 @@ namespace WindowsFormsApp1
         {
             try
             {
-                using (SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=SuperMarket;Integrated Security=True;Encrypt=False"))
-                {
-                    conn.Open();
-                    SqlDataAdapter da = new SqlDataAdapter("SELECT ISNULL(MAX(fkey), 4999)  FROM TFaktor", conn);
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
-                    lblFactorNumber.Text = (Convert.ToInt32(dt.Rows[0].ItemArray[0])+1).ToString();
-                }
+                //SELECT
+                SqlDataAdapter da = new SqlDataAdapter("SELECT   MAX(fkey)  FROM  TFactor", conn);
+                DataTable dt = new DataTable(); //a virtual table
+                da.Fill(dt);
+                lblFactorNumber.Text = (Convert.ToInt32(dt.Rows[0].ItemArray[0]) + 1).ToString();//radif 0 soton 0
+
             }
+            //برای اینه که اگه جدول دیتابیسم خالی بود خطا نده و کد فاکتور  رو از 5000 در نظر بگیره
             catch
             {
-                lblFactorNumber.Text = "5000"; // در صورت خطای شدید
+                lblFactorNumber.Text = "5000";
             }
         }
+        
 
 
         //ثبت فاکتور
@@ -132,7 +135,9 @@ namespace WindowsFormsApp1
                         // ثبت فاکتور فقط در اولین بار
                         if (checkFactor == false)
                         {
-                           
+                            //-- باید کد مشتری سیو شه که در همین فاکتور فقط برای همین مشتری بشه ثبت کرد
+                            savedMkeyFactor = Convert.ToInt32(textBoxMkey.Text);
+                            //MessageBox.Show(savedMkeyFactor.ToString());
 
                             SqlCommand insertCmd = new SqlCommand("INSERT INTO TFactor (fkey, username, mkey, datex, timex) VALUES (@fkey,@username,@mkey,@datex,@timex)", conn);
                             insertCmd.Parameters.AddWithValue("@fkey", Convert.ToInt32(lblFactorNumber.Text));
@@ -141,34 +146,107 @@ namespace WindowsFormsApp1
                             insertCmd.Parameters.AddWithValue("@datex", labelDate.Text);
                             insertCmd.Parameters.AddWithValue("@timex", DateTime.Now.ToLongTimeString());
                             insertCmd.ExecuteNonQuery();
-                            checkFactor = true;
-                        }
-
-                        
-
-
-                        //-- INSERT INTO TAghlam table
+                            //-- INSERT INTO TAghlam table
 
                             //conn.Open();
 
-                        SqlCommand insertCmd1 = new SqlCommand("INSERT INTO TAghlam (fkey, kkey, tedad) VALUES  (@fkey,@kkey,@tedad)", conn);
-                        insertCmd1.Parameters.AddWithValue("@fkey", Convert.ToInt32(lblFactorNumber.Text));
-                        insertCmd1.Parameters.AddWithValue("@kkey", Convert.ToInt64(textBoxKkey.Text));
-                        insertCmd1.Parameters.AddWithValue("@tedad", Convert.ToInt64(textBoxTedadKala.Text));
+                            SqlCommand insertCmd1 = new SqlCommand("INSERT INTO TAghlam (fkey, kkey, tedad) VALUES  (@fkey,@kkey,@tedad)", conn);
+                            insertCmd1.Parameters.AddWithValue("@fkey", Convert.ToInt32(lblFactorNumber.Text));
+                            insertCmd1.Parameters.AddWithValue("@kkey", Convert.ToInt64(textBoxKkey.Text));
+                            insertCmd1.Parameters.AddWithValue("@tedad", Convert.ToInt64(textBoxTedadKala.Text));
 
-                        insertCmd1.ExecuteNonQuery();
+                            insertCmd1.ExecuteNonQuery();
 
-                        // کم کردن موجودی کالا
-                        SqlCommand updateMojodiCmd = new SqlCommand("UPDATE TKala SET mojodi = mojodi - @tedad WHERE kkey = @kkey", conn);
-                        updateMojodiCmd.Parameters.AddWithValue("@tedad", Convert.ToInt64(textBoxTedadKala.Text));
-                        updateMojodiCmd.Parameters.AddWithValue("@kkey", Convert.ToInt64(textBoxKkey.Text));
-                        updateMojodiCmd.ExecuteNonQuery(); 
+                            // کم کردن موجودی کالا
+                            SqlCommand updateMojodiCmd = new SqlCommand("UPDATE TKala SET mojodi = mojodi - @tedad WHERE kkey = @kkey", conn);
+                            updateMojodiCmd.Parameters.AddWithValue("@tedad", Convert.ToInt64(textBoxTedadKala.Text));
+                            updateMojodiCmd.Parameters.AddWithValue("@kkey", Convert.ToInt64(textBoxKkey.Text));
+                            updateMojodiCmd.ExecuteNonQuery();
 
-                        textBoxMkey.Text = textBoxKkey.Text = textBoxTedadKala.Text = "";
-                        MessageBox.Show("فاکتور جدید با موفقیت ثبت شد", "پیام سیستم", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        FFaktor_Load(sender, e);
+                            checkFactor = true;
+
+                        }
+                        else if (checkFactor == true)
+                        {
+
+                            if (Convert.ToInt32(textBoxMkey.Text) == savedMkeyFactor)
+                            {
+                                SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM TAghlam WHERE fkey = @fkey AND kkey = @kkey", conn);
+                                cmd.Parameters.AddWithValue("@fkey", Convert.ToInt32(lblFactorNumber.Text));
+                                cmd.Parameters.AddWithValue("@kkey", Convert.ToInt64(textBoxKkey.Text));
+                                int count = (int)cmd.ExecuteScalar();
+                                //update TAghlam
+                                if (count > 0)
+                                {
+
+
+                                    //select tedad ghabli 
+                                    SqlDataAdapter da = new SqlDataAdapter("SELECT tedad FROM TAghlam WHERE fkey = @fkey AND kkey = @kkey", conn);
+                                    da.SelectCommand.Parameters.AddWithValue("@fkey", Convert.ToInt32(lblFactorNumber.Text));
+                                    da.SelectCommand.Parameters.AddWithValue("@kkey", Convert.ToInt64(textBoxKkey.Text));
+                                    DataTable dt = new DataTable();
+                                    da.Fill(dt);
+
+                                    MessageBox.Show(dt.Rows[0].ItemArray[0].ToString()); //prev Tedad
+
+                                    SqlCommand updateCmd = new SqlCommand("UPDATE TAghlam SET    tedad = @tedad WHERE  fkey = @fkey AND kkey = @kkey", conn);
+                                    updateCmd.Parameters.AddWithValue("@fkey", Convert.ToInt32(lblFactorNumber.Text));
+                                    updateCmd.Parameters.AddWithValue("@kkey", Convert.ToInt64(textBoxKkey.Text));
+                                    updateCmd.Parameters.AddWithValue("@tedad", Convert.ToInt64(textBoxTedadKala.Text));
+                                    updateCmd.ExecuteNonQuery();
+
+                                    // آپدیت موجودی کالا
+                                    SqlCommand updateMojodiCmd = new SqlCommand("UPDATE TKala SET mojodi = mojodi + @tedadeghabli - @tedad WHERE kkey = @kkey", conn);
+                                    updateMojodiCmd.Parameters.AddWithValue("@tedadeghabli", Convert.ToInt64(dt.Rows[0].ItemArray[0].ToString()));
+                                    updateMojodiCmd.Parameters.AddWithValue("@tedad", Convert.ToInt64(textBoxTedadKala.Text));
+                                    updateMojodiCmd.Parameters.AddWithValue("@kkey", Convert.ToInt64(textBoxKkey.Text));
+                                    updateMojodiCmd.ExecuteNonQuery();
+
+
+                                }
+
+
+                                //insert TAghlam
+                                else if (count <= 0)
+                                {
+                                    SqlCommand insertCmd1 = new SqlCommand("INSERT INTO TAghlam (fkey, kkey, tedad) VALUES  (@fkey,@kkey,@tedad)", conn);
+                                    insertCmd1.Parameters.AddWithValue("@fkey", Convert.ToInt32(lblFactorNumber.Text));
+                                    insertCmd1.Parameters.AddWithValue("@kkey", Convert.ToInt64(textBoxKkey.Text));
+                                    insertCmd1.Parameters.AddWithValue("@tedad", Convert.ToInt64(textBoxTedadKala.Text));
+
+                                    insertCmd1.ExecuteNonQuery();
+
+                                    // کم کردن موجودی کالا
+                                    SqlCommand updateMojodiCmd = new SqlCommand("UPDATE TKala SET mojodi = mojodi - @tedad WHERE kkey = @kkey", conn);
+                                    updateMojodiCmd.Parameters.AddWithValue("@tedad", Convert.ToInt64(textBoxTedadKala.Text));
+                                    updateMojodiCmd.Parameters.AddWithValue("@kkey", Convert.ToInt64(textBoxKkey.Text));
+                                    updateMojodiCmd.ExecuteNonQuery();
+
+                                }
+                            }
+                            else  if (Convert.ToInt32(textBoxMkey.Text) != savedMkeyFactor)
+                            {
+                                MessageBox.Show($"شما فقط مجاز هستید اطلاعات کالا را برای مشتری با کد {savedMkeyFactor} ثبت کنید. زیرا در ابتدای ایجاد این فاکتور ، این کد مشتری را انتخاب کردید . برای ایجاد فاکتور جدید صفحه را بسته و مجددا بر روی تب فاکتور کلیک کنید !", "پیام سیستم", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                textBoxMkey.Focus();
+                                return;
+                            }
+
+                        }
+
 
                     }
+
+                MessageBox.Show("فاکتور جدید با موفقیت ثبت شد", "پیام سیستم", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //FFaktor_Load(sender, e);
+
+                textBoxKkey.Text = textBoxTedadKala.Text = "";
+                textBoxMkey.Text = savedMkeyFactor.ToString();
+
+
+                    //-- نمایش داده ها
+                    showData();
+                textBoxMkey.Focus();
+                    
 
                 }
                 catch (Exception ex)
@@ -189,8 +267,8 @@ namespace WindowsFormsApp1
 
                 //        SqlCommand insertCmd = new SqlCommand("INSERT INTO TAghlam (fkey, kkey, tedad) VALUES  (@fkey,@kkey,@tedad)", conn);
                 //        insertCmd.Parameters.AddWithValue("@fkey", Convert.ToInt32(lblFactorNumber.Text));
-                //        insertCmd.Parameters.AddWithValue("@kkey", Convert.ToInt64(textBoxKkey.Text) );
-                //        insertCmd.Parameters.AddWithValue("@tedad", Convert.ToInt64(textBoxTedadKala.Text) );
+                //        insertCmd.Parameters.AddWithValue("@kkey", Convert.ToInt64(textBoxKkey.Text));
+                //        insertCmd.Parameters.AddWithValue("@tedad", Convert.ToInt64(textBoxTedadKala.Text));
 
                 //        insertCmd.ExecuteNonQuery();
 
@@ -210,13 +288,49 @@ namespace WindowsFormsApp1
             }
         }
 
+
+        public void showData()
+        {
+            try
+            {
+                // استفاده از using برای اتصال و دستور
+                using (SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=SuperMarket;Integrated Security=True;Encrypt=False"))
+                {
+                    conn.Open();
+                    SqlDataAdapter da = new SqlDataAdapter("SELECT TAghlam.kkey AS [کد کالا], TKala.kname AS [نام کالا], TKala.price AS [قیمت واحد], TAghlam.tedad AS تعداد, TAghlam.tedad * TKala.price AS [قیمت کل] FROM  TKala INNER JOIN   TAghlam ON TKala.kkey = TAghlam.kkey WHERE TAghlam.fkey=@fkey", conn);
+                    da.SelectCommand.Parameters.AddWithValue("@fkey", Convert.ToInt32(lblFactorNumber.Text));
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    dataGridView1.DataSource = dt;
+
+
+                    dataGridView1.Columns[0].Width = 70;// کد کالا
+                    dataGridView1.Columns[1].Width = 160;//نام کالا
+                    dataGridView1.Columns[2].Width = 80;//قیمت واحد
+                    dataGridView1.Columns[3].Width = 60; //تعداد
+                    dataGridView1.Columns[3].Width = 80; // قیمت کل
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"خطا: {ex.Message}", "پیام سیستم", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
         private void FFaktor_Load(object sender, EventArgs e)
         {
+            checkFactor = false;
             newFactorCode();
             textBoxMkey.Focus();
+            textBoxMkey.Text = textBoxKkey.Text = textBoxTedadKala.Text = "";
 
             //تاریخ شمسی
             labelDate.Text =ShamsiDate.m2shamsi(DateTime.Now);
+
+
+
 
         }
 
@@ -301,6 +415,7 @@ namespace WindowsFormsApp1
                         lablKalamojodi.Text = dt.Rows[0].ItemArray[2].ToString(); // mojodi
 
                         textBoxTedadKala.Text = dt.Rows[0].ItemArray[2].ToString();
+                        textBoxTedadKala.Focus();
                         checkKCode = true;
                     }
                     else
