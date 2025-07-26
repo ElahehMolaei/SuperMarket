@@ -20,8 +20,16 @@ namespace SuperMarket
 
         private void افزودنکاربرجدیدToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FUser fUser = new FUser();
-            fUser.ShowDialog();
+            if (Memory.usertypeMem == 1) //فقط مدیر میتونه اد کنه
+            {
+                FUser fUser = new FUser();
+                fUser.ShowDialog();
+            }
+            else if (Memory.usertypeMem == 0) //کاربر عادی نمی تونه کاربر اد بزنه
+            {
+                MessageBox.Show("فقط مدیر می تواند به این بخش دسترسی داشته باشد");
+            }
+
 
         }
 
@@ -54,6 +62,17 @@ namespace SuperMarket
         {
             FFaktor fFaktor = new FFaktor();
             fFaktor.ShowDialog();
+        }
+
+        private void FMain_Load(object sender, EventArgs e)
+        {
+            //یعنی اگه کسی لاگین نکرده  اما من راه حل بهتر ارائه دادم و توی پروگرم سی مستقیم هندلش کردم
+            if (Memory.usernameMem == "")
+            {
+                FLogin fLogin = new FLogin();
+                fLogin.ShowDialog();
+            }
+
         }
     }
 }

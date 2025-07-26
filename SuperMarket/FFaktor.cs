@@ -114,7 +114,7 @@ namespace WindowsFormsApp1
             //}
             //catch (Exception ex)
             //{
-            //    MessageBox.Show($"خطا: {ex.Message}", "پیام سیستم", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show($"خطا: {ex.Message}", "پیام سیستم", MessageBoxButtons.OK, MessageBoxIcon.Error);
             //}
             //}
             else if (Convert.ToInt32(textBoxTedadKala.Text) > Convert.ToInt32(lablKalamojodi.Text))
@@ -142,7 +142,7 @@ namespace WindowsFormsApp1
                             SqlCommand insertCmd = new SqlCommand("INSERT INTO TFactor (fkey, username, mkey, datex, timex) VALUES (@fkey,@username,@mkey,@datex,@timex)", conn);
                             insertCmd.Parameters.AddWithValue("@fkey", Convert.ToInt32(lblFactorNumber.Text));
                             insertCmd.Parameters.AddWithValue("@mkey", Convert.ToInt32(textBoxMkey.Text));
-                            insertCmd.Parameters.AddWithValue("@username", "الهه"); //name useri ke login karde o dre factor sabt mikne
+                            insertCmd.Parameters.AddWithValue("@username", Memory.usernameMem); //name useri ke login karde o dre factor sabt mikne
                             insertCmd.Parameters.AddWithValue("@datex", labelDate.Text);
                             insertCmd.Parameters.AddWithValue("@timex", DateTime.Now.ToLongTimeString());
                             insertCmd.ExecuteNonQuery();

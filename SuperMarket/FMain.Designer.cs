@@ -71,7 +71,7 @@ namespace SuperMarket
             // افزودنکاربرجدیدToolStripMenuItem
             // 
             this.افزودنکاربرجدیدToolStripMenuItem.Name = "افزودنکاربرجدیدToolStripMenuItem";
-            this.افزودنکاربرجدیدToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.افزودنکاربرجدیدToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.افزودنکاربرجدیدToolStripMenuItem.Text = "افزودن کاربر جدید";
             this.افزودنکاربرجدیدToolStripMenuItem.Click += new System.EventHandler(this.افزودنکاربرجدیدToolStripMenuItem_Click);
             // 
@@ -156,6 +156,7 @@ namespace SuperMarket
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "فرم اصلی - سیستم مدیریت فروشگاه";
+            this.Load += new System.EventHandler(this.FMain_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

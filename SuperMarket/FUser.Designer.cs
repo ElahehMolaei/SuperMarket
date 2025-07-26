@@ -173,6 +173,7 @@ namespace SuperMarket
             this.MinimizeBox = false;
             this.Name = "FUser";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "فرم افزودن کاربر جدید";
             this.Load += new System.EventHandler(this.FUser_Load);
             this.groupBox1.ResumeLayout(false);
