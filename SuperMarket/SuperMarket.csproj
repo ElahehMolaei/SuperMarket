@@ -94,6 +94,12 @@
     <Compile Include="FMoshtariSearch.Designer.cs">
       <DependentUpon>FMoshtariSearch.cs</DependentUpon>
     </Compile>
+    <Compile Include="FSearchKala.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FSearchKala.Designer.cs">
+      <DependentUpon>FSearchKala.cs</DependentUpon>
+    </Compile>
     <Compile Include="FUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +138,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FMoshtariSearch.resx">
       <DependentUpon>FMoshtariSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FSearchKala.resx">
+      <DependentUpon>FSearchKala.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FUser.resx">
       <DependentUpon>FUser.cs</DependentUpon>

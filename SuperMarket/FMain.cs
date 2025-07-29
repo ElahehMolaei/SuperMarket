@@ -94,5 +94,11 @@ namespace SuperMarket
             FMoshtariSearch fMoshtariSearch = new FMoshtariSearch();
             fMoshtariSearch.ShowDialog();
         }
+
+        private void جستوجویاطلاعاتکالاToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FSearchKala fSearchKala = new FSearchKala();
+            fSearchKala.ShowDialog();
+        }
     }
 }

@@ -46,6 +46,8 @@ namespace SuperMarket
             this.menuReport = new System.Windows.Forms.ToolStripMenuItem();
             this.جستوجوToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.جستوجویاطلاعاتمشتریانToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
+            this.جستوجویاطلاعاتکالاToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -156,7 +158,9 @@ namespace SuperMarket
             // جستوجوToolStripMenuItem
             // 
             this.جستوجوToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.جستوجویاطلاعاتمشتریانToolStripMenuItem});
+            this.جستوجویاطلاعاتمشتریانToolStripMenuItem,
+            this.toolStripMenuItem3,
+            this.جستوجویاطلاعاتکالاToolStripMenuItem});
             this.جستوجوToolStripMenuItem.Name = "جستوجوToolStripMenuItem";
             this.جستوجوToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.جستوجوToolStripMenuItem.Text = "جستجو";
@@ -167,6 +171,18 @@ namespace SuperMarket
             this.جستوجویاطلاعاتمشتریانToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
             this.جستوجویاطلاعاتمشتریانToolStripMenuItem.Text = "جست و جوی اطلاعات مشتریان";
             this.جستوجویاطلاعاتمشتریانToolStripMenuItem.Click += new System.EventHandler(this.جستوجویاطلاعاتمشتریانToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(222, 6);
+            // 
+            // جستوجویاطلاعاتکالاToolStripMenuItem
+            // 
+            this.جستوجویاطلاعاتکالاToolStripMenuItem.Name = "جستوجویاطلاعاتکالاToolStripMenuItem";
+            this.جستوجویاطلاعاتکالاToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
+            this.جستوجویاطلاعاتکالاToolStripMenuItem.Text = "جست و جوی اطلاعات کالا";
+            this.جستوجویاطلاعاتکالاToolStripMenuItem.Click += new System.EventHandler(this.جستوجویاطلاعاتکالاToolStripMenuItem_Click);
             // 
             // FMain
             // 
@@ -208,5 +224,7 @@ namespace SuperMarket
         private ToolStripMenuItem menuReport;
         private ToolStripMenuItem جستوجوToolStripMenuItem;
         private ToolStripMenuItem جستوجویاطلاعاتمشتریانToolStripMenuItem;
+        private ToolStripSeparator toolStripMenuItem3;
+        private ToolStripMenuItem جستوجویاطلاعاتکالاToolStripMenuItem;
     }
 }
