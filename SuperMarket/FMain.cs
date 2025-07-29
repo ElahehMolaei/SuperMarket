@@ -88,5 +88,11 @@ namespace SuperMarket
         {
            
         }
+
+        private void جستوجویاطلاعاتمشتریانToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FMoshtariSearch fMoshtariSearch = new FMoshtariSearch();
+            fMoshtariSearch.ShowDialog();
+        }
     }
 }
